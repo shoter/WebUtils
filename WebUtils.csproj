@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Attributes\AjaxOnlyAttribute.cs" />
     <Compile Include="Extensions\IQueryableExtensions.cs" />
+    <Compile Include="Helpers\RouteDataHelper.cs" />
     <Compile Include="PagingParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
