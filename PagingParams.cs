@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WebUtils
 {
-    public class PagingParams
+    public class PagingParam
     {
-        public int Page { get; set; }
-        public int Records { get; set; } = 0;
+        public int PageNumber { get; set; } = 1;
+        protected int Records { get; set; } = 0;
         public int RecordsPerPage { get; set; } = 10;
         public int PageCount
         {
@@ -20,14 +20,38 @@ namespace WebUtils
         }
 
 
-        public PagingParams() { }
+        public PagingParam() { }
 
+
+        public IEnumerable<T> Apply<T>(IEnumerable<T> query)
+        {
+            Records = query.Count();
+
+            if (PageNumber < 1)
+                PageNumber = 1;
+            if (PageNumber > PageCount)
+                PageNumber = PageCount;
+
+            
+
+            return query
+                .Skip((PageNumber - 1) * RecordsPerPage)
+                .Take(RecordsPerPage);
+        }
 
         public IQueryable<T> Apply<T>(IQueryable<T> query)
         {
-            Page = query.Count();
+            Records = query.Count();
 
-            return query.Skip((PageCount - 1) * RecordsPerPage)
+            if (PageNumber < 1)
+                PageNumber = 1;
+            if (PageNumber > PageCount)
+                PageNumber = PageCount;
+
+            
+
+            return query
+                .Skip((PageNumber - 1) * RecordsPerPage)
                 .Take(RecordsPerPage);
         }
 

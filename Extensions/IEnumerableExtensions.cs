@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebUtils.Extensions
 {
-    public static class IQueryableExtensions
+    public static class IEnumerableExtensions
     {
-        public static IQueryable<T> Apply<T>(this IQueryable<T> query, PagingParam pp)
+        public static IEnumerable<T> Apply<T>(this IEnumerable<T> query, PagingParam pp)
         {
             return pp.Apply(query);
         }
