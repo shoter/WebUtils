@@ -32,11 +32,13 @@ namespace WebUtils
             if (PageNumber > PageCount)
                 PageNumber = PageCount;
 
-            
 
-            return query
-                .Skip((PageNumber - 1) * RecordsPerPage)
-                .Take(RecordsPerPage);
+
+            if (Records > 0)
+                return query
+                    .Skip((PageNumber - 1) * RecordsPerPage)
+                    .Take(RecordsPerPage);
+            else return query;
         }
 
         public IQueryable<T> Apply<T>(IQueryable<T> query)
@@ -48,11 +50,12 @@ namespace WebUtils
             if (PageNumber > PageCount)
                 PageNumber = PageCount;
 
-            
 
-            return query
-                .Skip((PageNumber - 1) * RecordsPerPage)
-                .Take(RecordsPerPage);
+            if (Records > 0)
+                return query
+                    .Skip((PageNumber - 1) * RecordsPerPage)
+                    .Take(RecordsPerPage);
+            else return query;
         }
 
 

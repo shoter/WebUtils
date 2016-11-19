@@ -16,10 +16,19 @@ namespace WebUtils.Extensions
         public static List<SelectListItem> ToSelectListItems<T>(Func<T, string> stringifier)
             where T : struct, IConvertible
         {
+            return ToSelectListItems<T>(stringifier, t => true);
+        }
+
+        public static List<SelectListItem> ToSelectListItems<T>(Func<T, string> stringifier, Func<T, bool> selector)
+            where T : struct, IConvertible
+        {
             List<SelectListItem> list = new List<SelectListItem>();
 
             foreach (T t in Enum.GetValues(typeof(T)))
             {
+                if (selector(t) == false)
+                    continue;
+
                 Enum test = Enum.Parse(typeof(T), t.ToString()) as Enum;
                 int value = Convert.ToInt32(test); // x is the integer value of enum
 

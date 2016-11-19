@@ -73,12 +73,20 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IEnumExtensions.cs" />
     <Compile Include="Extensions\IQueryableExtensions.cs" />
+    <Compile Include="Helpers\FoundationHelper.cs" />
     <Compile Include="Helpers\RouteDataHelper.cs" />
+    <Compile Include="ImageSelectListItem.cs" />
     <Compile Include="PagingParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sociatis\Common\Common.csproj">
+      <Project>{7833de49-4309-4c54-bd72-ea7b9f99f71f}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
