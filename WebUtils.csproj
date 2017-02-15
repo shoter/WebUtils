@@ -77,6 +77,7 @@
     <Compile Include="Helpers\FoundationHelper.cs" />
     <Compile Include="Helpers\RouteDataHelper.cs" />
     <Compile Include="ImageSelectListItem.cs" />
+    <Compile Include="Logging\ServerFileLogger.cs" />
     <Compile Include="PagingParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +88,10 @@
     <ProjectReference Include="..\Sociatis\Common\Common.csproj">
       <Project>{7833de49-4309-4c54-bd72-ea7b9f99f71f}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utilities.csproj">
+      <Project>{c09f7ccd-a615-411c-a066-da16d8f58a75}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

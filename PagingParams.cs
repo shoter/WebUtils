@@ -9,7 +9,7 @@ namespace WebUtils
     public class PagingParam
     {
         public int PageNumber { get; set; } = 1;
-        protected int Records { get; set; } = 0;
+        public int Records { get; set; } = 0;
         public int RecordsPerPage { get; set; } = 10;
         public int PageCount
         {
