@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\AjaxOnlyAttribute.cs" />
+    <Compile Include="Attributes\IsLocalAttribute.cs" />
     <Compile Include="EF\IDomSelector.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IEnumExtensions.cs" />
