@@ -8,7 +8,7 @@ namespace WebUtils.Forms.Select2
 {
     public interface ISelect2Request
     {
-        string Query { set; }
+        string Query { set; get; }
         int PageSize { get; set; }
         int PageNumber { get; set; }
     }
