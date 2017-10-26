@@ -78,6 +78,7 @@
     <Compile Include="Attributes\AjaxOnlyAttribute.cs" />
     <Compile Include="Attributes\IsLocalAttribute.cs" />
     <Compile Include="Attributes\NoAjaxAttribute.cs" />
+    <Compile Include="Exceptions\ExceptionMVCLogger.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IEnumExtensions.cs" />
@@ -97,7 +98,10 @@
     <Compile Include="Logging\ServerFileLogger.cs" />
     <Compile Include="PagingParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\IJavascriptRenderer.cs" />
+    <Compile Include="Scripts\JqueryAfterInitScriptRenderer.cs" />
     <Compile Include="Scripts\ScriptInjector.cs" />
+    <Compile Include="Scripts\ScriptRenderer.cs" />
     <Compile Include="ViewEngines\CSharpRazorViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -21,6 +21,11 @@ namespace WebUtils
 
 
         public PagingParam() { }
+        public PagingParam(int page, int recordsPerPage)
+        {
+            PageNumber = page;
+            RecordsPerPage = recordsPerPage;
+        }
 
 
         public IEnumerable<T> Apply<T>(IEnumerable<T> query)

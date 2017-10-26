@@ -10,6 +10,7 @@ namespace WebUtils.Scripts
 {
     public class ScriptInjector
     {
+        private static IJavascriptRenderer javascriptRenderer;
 
         private static List<string> scripts
         {
@@ -22,15 +23,31 @@ namespace WebUtils.Scripts
             }
         }
 
+        public static void SetJavascriptRenderer(IJavascriptRenderer renderer)
+        {
+            javascriptRenderer = renderer;
+        }
+
         public static void AddScript(string src)
         {
-            scripts.Add(src);
+            if(scripts.Contains(src) == false)
+                scripts.Add(src);
+        }
+
+        public static void AddJavascript(string code)
+        {
+            javascriptRenderer.AddJavascript(code);
         }
 
 
         public static IHtmlString RenderScripts()
         {
             return System.Web.Optimization.Scripts.Render(scripts.ToArray());
+        }
+
+        public static IHtmlString RenderJavascriptCode()
+        {
+            return javascriptRenderer.RenderJavascript();
         }
 
     }
