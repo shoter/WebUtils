@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace WebUtils.Scripts
 {
-    public class ScriptInjector
+    public static class ScriptInjector
     {
         private static IJavascriptRenderer javascriptRenderer;
 

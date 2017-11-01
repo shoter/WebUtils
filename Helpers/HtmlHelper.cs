@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebUtils.Extensions;
 using WebUtils.Forms.Select2;
+using WebUtils.Scripts;
 
 namespace WebUtils.Helpers
 {
@@ -87,6 +88,11 @@ namespace WebUtils.Helpers
             option.Attributes["selected"] = "selected";
             option.InnerHtml = select2.SelectedValueName;
             select.InnerHtml = option.ToString(TagRenderMode.Normal);
+
+            if (string.IsNullOrWhiteSpace(Select2AjaxDefaultProvider.Current?.JavascriptFile) == false)
+                ScriptInjector.AddScript(Select2AjaxDefaultProvider.Current.JavascriptFile);
+            if (string.IsNullOrWhiteSpace(Select2AjaxDefaultProvider.Current?.StyleFile) == false)
+                StyleInjector.AddStyle(Select2AjaxDefaultProvider.Current.StyleFile);
 
             return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
         }

@@ -102,6 +102,7 @@
     <Compile Include="Scripts\JqueryAfterInitScriptRenderer.cs" />
     <Compile Include="Scripts\ScriptInjector.cs" />
     <Compile Include="Scripts\ScriptRenderer.cs" />
+    <Compile Include="Scripts\StyleInjector.cs" />
     <Compile Include="ViewEngines\CSharpRazorViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>
