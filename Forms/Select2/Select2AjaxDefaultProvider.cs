@@ -38,6 +38,10 @@ namespace WebUtils.Forms.Select2
         public string DefaultData { get; set; } = "Common.Select2.dataDefault";
         public string JavascriptFile { get; set; } = string.Empty;
         public string StyleFile { get; set; } = string.Empty;
+        /// <summary>
+        /// If set to true then ID will be the same as Name at create time.
+        /// </summary>
+        public bool AutoGiveIDSameAsName { get; set; } = false;
 
 
         public static Select2AjaxDefaultProvider Current { get; protected set; }

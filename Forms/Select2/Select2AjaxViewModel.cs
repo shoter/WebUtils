@@ -125,7 +125,10 @@ namespace WebUtils.Forms.Select2
             ControllerName = controllerName;
             SelectedValue = selectedValue;
             SelectedValueName = selectedValueName;
-            ID = Name = name;
+            Name = name;
+
+            if (Select2AjaxDefaultProvider.Current.AutoGiveIDSameAsName)
+                ID = Name;
         }
 
     }
