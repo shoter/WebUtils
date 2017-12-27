@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using WebUtils.Extensions;
 using WebUtils.Forms.Select2;
+using WebUtils.Html;
+using WebUtils.Html.Constructs;
 using WebUtils.Scripts;
 
 namespace WebUtils.Helpers
@@ -47,6 +49,11 @@ namespace WebUtils.Helpers
             return MvcHtmlString.Create(output + "]");
         }
 
+        public static MvcHtmlString RenderPaddle(this System.Web.Mvc.HtmlHelper helper, string id, string enabledText = "On", string disabledText = "Off", bool initialValue = false, object inputAttributes = null, object paddleAttributes = null)
+        {
+            return Paddle.Generate(id, enabledText, disabledText, initialValue, inputAttributes, paddleAttributes);
+        }
+
         public static MvcHtmlString Render(this System.Web.Mvc.HtmlHelper helper, Select2AjaxViewModel select2, string prefix = "", params string[] classes)
         {
             var urlHelper = helper.GetUrlHelper();
@@ -56,7 +63,7 @@ namespace WebUtils.Helpers
             foreach (var @class in classes)
                 select.AddCssClass(@class);
 
-            select.Attributes["data-Select2AjaxViewModel"] = "";
+            select.Attributes["data-Select2AjaxViewModel"] = "true";
             select.Attributes["name"] = prefix + select2.Name;
             select.Attributes["data-select2-url"] = urlHelper.Action(select2.ControllerName, select2.ActionName);
             select.Attributes["data-select2-delay"] = select2.Delay.ToString();
