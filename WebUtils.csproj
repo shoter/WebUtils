@@ -121,6 +121,7 @@
     <Compile Include="ImageSelectListItem.cs" />
     <Compile Include="Logging\ServerFileLogger.cs" />
     <Compile Include="Mvc\CustomSelectList.cs" />
+    <Compile Include="Mvc\ONIArrayModelBinder.cs" />
     <Compile Include="PagingParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\IJavascriptRenderer.cs" />
@@ -149,11 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forms\Select2\WebUtils.Select2.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Mvc\Page1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
