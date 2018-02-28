@@ -10,7 +10,12 @@ using System.Web;
 
 namespace WebUtils.Mvc
 {
-    public class ONIArrayDataBinder : DefaultModelBinder
+/// <summary>
+/// Order Not Important Array Model Binder. Converts array from HTTP request into array. 
+/// Request's array may be in random order with big gaps in between the elements and the result array will be ordered ascending by values of the keys.
+/// Array indexes in request cannot be negative
+/// </summary>
+    public class ONIArrayModelBinder : DefaultModelBinder
     {
         public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
