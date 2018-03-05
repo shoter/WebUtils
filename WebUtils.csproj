@@ -49,11 +49,12 @@
       <HintPath>..\Sociatis\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\Sociatis\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Sociatis\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\Sociatis\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -82,6 +83,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Sociatis\packages\Selenium.WebDriver.3.9.1\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\Sociatis\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
@@ -104,6 +108,7 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IEnumExtensions.cs" />
     <Compile Include="Extensions\IQueryableExtensions.cs" />
+    <Compile Include="Extensions\SelectListExtensions.cs" />
     <Compile Include="Forms\Select2\ISelect2Item.cs" />
     <Compile Include="Forms\Select2\ISelect2Request.cs" />
     <Compile Include="Forms\Select2\ISelect2Response.cs" />
@@ -129,6 +134,13 @@
     <Compile Include="Scripts\ScriptInjector.cs" />
     <Compile Include="Scripts\ScriptRenderer.cs" />
     <Compile Include="Scripts\StyleInjector.cs" />
+    <Compile Include="SeleniumAdditions\AlertExtensions.cs" />
+    <Compile Include="SeleniumAdditions\ClickExtensions.cs" />
+    <Compile Include="SeleniumAdditions\ExpectedConditions.cs" />
+    <Compile Include="SeleniumAdditions\PageLoadWaiter.cs" />
+    <Compile Include="SeleniumAdditions\UIExtensions.cs" />
+    <Compile Include="SeleniumAdditions\WaitExtensions.cs" />
+    <Compile Include="SeleniumAdditions\WebElementExtensions.cs" />
     <Compile Include="ViewEngines\CSharpRazorViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>

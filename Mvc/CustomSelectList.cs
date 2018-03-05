@@ -35,7 +35,7 @@ namespace WebUtils.Mvc
 
         public CustomSelectList AddSelect()
         {
-            Add("", "-- Select", selected: true);
+            Add("", "-- Select --", selected: true);
             return this;
         }
 
@@ -44,6 +44,13 @@ namespace WebUtils.Mvc
             foreach (var item in items)
                 Add(valueFunc(item), nameFunc(item));
 
+            return this;
+        }
+
+        public CustomSelectList AddNumbers(int start, int end)
+        {
+            for (int i = start; i <= end; ++i)
+                Add(i, i.ToString());
             return this;
         }
 

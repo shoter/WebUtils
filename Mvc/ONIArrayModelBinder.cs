@@ -24,7 +24,7 @@ namespace WebUtils.Mvc
 
             List<object> items = getArrayItems(controllerContext, bindingContext, arrayName, elementType);
             if (items.Count == 0)
-                return Activator.CreateInstance(bindingContext.ModelType);
+                return Array.CreateInstance(elementType, 0);
 
             Array array = Array.CreateInstance(elementType, items.Count);
             (items as IList).CopyTo(array, 0);
