@@ -28,25 +28,21 @@ namespace WebUtils.Helpers
 
         public static MvcHtmlString ToJavascriptArray<T>(this ICollection<T> array, params Func<T, object>[] members)
         {
-            string output = "[";
+            StringBuilder output = new StringBuilder("[");
 
-            foreach (var element in array)
-            {
-                if(members.Length > 1)
-                    output += "[";
-                for (int i = 0; i < members.Length; ++i)
-                {
-                   
-                    output += members[i](element).ToString();
-                    if(i < members.Length - 1)
-                        output += ",";
-                }
-                if (members.Length > 1)
-                    output += "]";
-                output += ",";
-            }
+            output.Append(string.Join(",",
+                array.Select(element => getJavascriptArrayElement(element, members))));
+            output.Append("]");
+            return MvcHtmlString.Create(output.ToString());
+        }
 
-            return MvcHtmlString.Create(output + "]");
+        private static string getJavascriptArrayElement<T>(T element, Func<T, object>[] members)
+        {
+            if (members.Length == 0)
+                return $"{element}";
+            else if(members.Length == 1)
+                return $"{members[0](element)}";
+            return $"[{string.Join(",", members.Select(m => m(element).ToString()))}]";
         }
 
         public static MvcHtmlString RenderPaddle(this System.Web.Mvc.HtmlHelper helper, string id, string enabledText = "On", string disabledText = "Off", bool initialValue = false, object inputAttributes = null, object paddleAttributes = null)

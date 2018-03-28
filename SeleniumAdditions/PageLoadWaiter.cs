@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WebUtils.SeleniumAdditions
@@ -22,6 +23,7 @@ namespace WebUtils.SeleniumAdditions
         {
             waitForBodyStale();
             waitForPageLoad();
+            Thread.Sleep(100);
         }
 
         private void waitForPageLoad()

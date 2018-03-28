@@ -125,6 +125,7 @@
     <Compile Include="Html\ClassField.cs" />
     <Compile Include="ImageSelectListItem.cs" />
     <Compile Include="Logging\ServerFileLogger.cs" />
+    <Compile Include="Modules\HangFireModule.cs" />
     <Compile Include="Mvc\CustomSelectList.cs" />
     <Compile Include="Mvc\ONIArrayModelBinder.cs" />
     <Compile Include="PagingParams.cs" />
